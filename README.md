@@ -27,7 +27,37 @@ The goal of this project was to design a robot's environment in gazebo and progr
 ### Directory Tree and contents
 
 ```
-
+    ├──                                # Official ROS packages
+    |
+    ├── slam_gmapping                  # gmapping_demo.launch file                   
+    │   ├── gmapping
+    │   ├── ...
+    ├── turtlebot                      # keyboard_teleop.launch file
+    │   ├── turtlebot_teleop
+    │   ├── ...
+    ├── turtlebot_interactions         # view_navigation.launch file      
+    │   ├── turtlebot_rviz_launchers
+    │   ├── ...
+    ├── turtlebot_simulator            # turtlebot_world.launch file 
+    │   ├── turtlebot_gazebo
+    │   ├── ...
+    ├──                                # Your packages and direcotries
+    |
+    ├── map                            # map files
+    │   ├── ...
+	├── world                          # world files
+    │   ├── ...
+    ├── scripts                        # shell scripts files
+    │   ├── ...
+    ├──rvizConfig                      # rviz configuration files
+    │   ├── ...
+    ├──pick_objects                    # pick_objects C++ node
+    │   ├── src/pick_objects.cpp
+    │   ├── ...
+    ├──add_markers                     # add_marker C++ node
+    │   ├── src/add_markers.cpp
+    │   ├── ...
+    └──
 ```
 
 This directory represents the main project's `src` folder structure with following contents
@@ -36,7 +66,8 @@ This directory represents the main project's `src` folder structure with followi
 * **images** - folder with images and videos for this report
 * **add_markers** - add marker C++ node
 * **config** - folder with configuration file to specify pick-up and drop-off locations
-* **map** - map and gazebo world files
+* **map** - map files
+* **world** - world files
 * **pick_objects** - pick-objects C++ node
 * **rvizConfig** - folder with rViz configurations used with some launch scripts
 * **scripts** - shell scripts

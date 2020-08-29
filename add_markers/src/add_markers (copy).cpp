@@ -10,6 +10,7 @@ float dropOff[3] = {3.0, 2.0, 1.0};
 float thresh[2] = {0.2, 0.01};
 
 
+
 //Flags
 bool atPickUp = false;
 bool atDropOff = false;
@@ -73,6 +74,15 @@ int main( int argc, char** argv )
     marker.action = visualization_msgs::Marker::ADD;
 
     // Set the pose of the marker.  This is a full 6DOF pose relative to the frame/time specified in the header
+
+    // n.getParam("/pick_up_loc/tx", marker.pose.position.x);
+    // n.getParam("/pick_up_loc/ty", marker.pose.position.y);
+    // n.getParam("/pick_up_loc/tz", marker.pose.position.z);
+    // n.getParam("/pick_up_loc/qx", marker.pose.orientation.x);
+    // n.getParam("/pick_up_loc/qy", marker.pose.orientation.y);
+    // n.getParam("/pick_up_loc/qz", marker.pose.orientation.z);
+    // n.getParam("/pick_up_loc/qw", marker.pose.orientation.w);
+
     marker.pose.position.x = pickUp[0];
     marker.pose.position.y = pickUp[1];
     marker.pose.position.z = 0;

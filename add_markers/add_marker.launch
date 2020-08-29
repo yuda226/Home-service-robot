@@ -4,11 +4,9 @@
 
   <node name="add_markers" pkg="add_markers" type="add_markers" output="screen" >
 
-    <!-- <remap from="scan" to="udacity_bot/laser/scan"/> -->
-  
-    <!-- <param name="odom_frame_id" value="odom"/>
-    <param name="initial_pose_x" value="-2"/>
-    <param name="initial_pose_y" value="1"/> -->
+    <!-- <remap from="scan" to="udacity_bot/laser/scan"/>
+    <param name="odom_frame_id" value="odom"/>
+    <param name="initial_pose_x" value="-2"/> -->
 
   </node>
 
