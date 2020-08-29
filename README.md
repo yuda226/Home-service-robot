@@ -128,3 +128,7 @@ Test slam_gmapping, amcl_localization, pick_objects, add_markers, RUN:
 ./pick_objects.sh
 ./add_markers.sh
 ```
+#### Alternatively, run tumx.conf to launch the home service robot
+```
+home_service_tmux.conf
+```

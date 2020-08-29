@@ -5,7 +5,7 @@
 
 //Positions
 float pickUp[3] = {3.0, 5.0, 1.0};
-float dropOff[3] = {3.0, 1.0, 1.0};
+float dropOff[3] = {3.0, 2.0, 1.0};
 
 // Define a client for to send goal requests to the move_base server through a SimpleActionClient
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;

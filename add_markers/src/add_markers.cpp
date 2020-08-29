@@ -4,11 +4,11 @@
 #include <complex>
 
 
+//NOTE: for the position here has hardcoded to fix pickup and dropoff points, to update to getparam from user input or preset config.yaml file for dynamic position 
 //Positions and thresholds
 float pickUp[3] = {3.0, 5.0, 1.0};
-float dropOff[3] = {3.0, 2.0, 1.0};
+float dropOff[3] = {3.0, 1.0, 1.0};
 float thresh[2] = {0.2, 0.01};
-
 
 //Flags
 bool atPickUp = false;
@@ -16,11 +16,10 @@ bool atDropOff = false;
 bool pickUpDone = false;
 bool dropOffDone = false;
 
-
 void chatterCallback(const nav_msgs::Odometry::ConstPtr& msg)
 { 
   
-//Pick up
+//Pick up threshole, x & y give 20cm, rotaional give .01rad 
 if (std::abs(pickUp[0] -msg->pose.pose.position.x) < thresh[0] && std::abs(pickUp[1] -msg->pose.pose.position.y) < thresh[0] && std::abs(pickUp[2] -msg->pose.pose.orientation.w) < thresh[1])
    { 
     if(!atPickUp)
@@ -29,7 +28,7 @@ if (std::abs(pickUp[0] -msg->pose.pose.position.x) < thresh[0] && std::abs(pickU
     }
    }else{atPickUp = false;}
 
-//Drop off
+//Drop off threshole, x & y give 20cm, rotaional give .01rad 
 if (std::abs(dropOff[0] -msg->pose.pose.position.x) < thresh[0] && std::abs(dropOff[1] -msg->pose.pose.position.y) < thresh[0] && std::abs(dropOff[2] -msg->pose.pose.orientation.w) < thresh[1])
   { 
     if(!atDropOff)
@@ -49,8 +48,6 @@ int main( int argc, char** argv )
   ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
   ros::Subscriber odom_sub = n.subscribe("odom", 1000, chatterCallback);
   
-
-
   // Set our initial shape type to be a cube
   uint32_t shape = visualization_msgs::Marker::CUBE;
 

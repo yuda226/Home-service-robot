@@ -1,0 +1,6 @@
+<!--
+  Used for visualising the turtlebot while building a map or navigating with the ros navistack.
+ -->
+<launch>
+  <node name="rviz" pkg="rviz" type="rviz" args="/home/yuda/myrobot_udacity/myrobot_gazebo_project4/src/rvizConfig/home_service.rviz"/>
+</launch>
